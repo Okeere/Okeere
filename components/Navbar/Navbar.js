@@ -40,22 +40,22 @@ const Navbar = () => {
                     <div style={{ fontFamily: 'Poppins, sans-serif' }} className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
                         <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 text-md md:text-md tracking-wider ">
                             <li>
-                                <a href="#" className={style.listHome} aria-current="page">Home</a>
+                                <a href="/" className={style.listHome} aria-current="page">Home</a>
                             </li>
                             <li>
-                                <a href="#" className={style.list}>About</a>
+                                <a href="/about" className={style.list}>About</a>
                             </li>
                             <li>
-                                <a href="#" className={style.list}>Products</a>
+                                <a href="/products" className={style.list}>Products</a>
                             </li>
                             <li>
-                                <a href="#" className={style.list}>Contact</a>
+                                <a href="/contact" className={style.list}>Contact</a>
                             </li>
                             <li>
-                                <a href="#" className={style.list}>Login</a>
+                                <a href="/login" className={style.list}>Login</a>
                             </li>
                             <li>
-                                <a href="#" className={style.list}>Register</a>
+                                <a href="/register" className={style.list}>Register</a>
                             </li>
                         </ul>
                     </div>

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Head from "next/head";
 import screenWidth from '../hooks/windowSize'
+import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,9 +16,10 @@ function MyApp({ Component, pageProps }) {
 
       </Head>
       <div className="overflow-x-hidden">
-      <Navbar />
+        <Navbar />
 
-      <Component {...pageProps} />
+        <Component {...pageProps} />
+        <Footer />
       </div>
     </>
   )
