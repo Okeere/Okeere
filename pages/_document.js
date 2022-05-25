@@ -7,7 +7,7 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <title key={'title'}>Website for a fast food restaurant</title>
+                    <title key={'title'}>Ecommerce Store</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     <meta
                         name="description"

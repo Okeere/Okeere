@@ -4,20 +4,20 @@ import DropDownMenu from './DropDownMenu'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { ImCross } from 'react-icons/im'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import Link from 'next/link'
 const Navbar = () => {
 
     const screenWidth = useWindowSize()
     const style = {
-        wrapper: 'absolute md:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto',
-        list: 'block my-4 py-2 pr-4 pl-3 text-stone-600 hover:text-stone-900 hover:mx-3   md:border-0 font-bold md:p-0  hover:text-[#EFC262]  transition-all duration-[300ms] border-move-animation',
-        listHome: 'text-stone-600 hover:text-stone-900 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms] border-b-2 border-stone-600',
+        wrapper: 'absolute md:relative text-gray-200 w-[100%] lg:w-[75%] mx-auto py-3',
+        list: 'block my-4 py-2 pr-4 pl-3 text-stone-600 hover:text-stone-900 hover:mx-3 md:border-0 font-bold md:p-0     transition-all duration-[300ms] border-move-animation',
+        listHome: 'text-stone-600 hover:text-stone-900 block my-4 py-2 pr-4 pl-3 hover:text-stone-900 hover:mx-3  font-bold md:p-0 transition-all duration-[300ms]',
         cart: `hover:scale-[1.3] hover:bg-stone-200 rounded-full px-2 py-2 md:py-2 border-2 border-white font-bold  hover:text-gray-900 transition-all duration-[300ms] cursor-pointer text-2xl ${screenWidth.width < 1024 ? 'text-gray-800' : 'text-gray-800'}`,
     }
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const handleSmallMenu = () => {
         setIsMenuOpen(prevValue => !prevValue)
     }
-    console.log(isMenuOpen)
     return (
         <div className={style.wrapper}>
             <nav className="px-2 sm:px-4 py-2.5 rounded bg-white" >
@@ -27,7 +27,8 @@ const Navbar = () => {
                         <img src={`/img/logo.webp`} className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
                     </a>
                     <div className="target flex items-center md:order-2">
-                        <div className={style.cart}><AiOutlineShoppingCart /></div>
+                        <Link href="/cart">
+                        <div className={style.cart}><AiOutlineShoppingCart /></div></Link>
                         {/* the hamburger button */}
                         <button aria-label="Button to toggle mobile menu" onClick={handleSmallMenu} data-collapse-toggle="mobile-menu-2" type="button" className=" inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-600 transtion duration-[300ms]" aria-controls="mobile-menu-2" aria-expanded="false">
                             {isMenuOpen ? <ImCross className={`${isMenuOpen && 'flex'}`} /> : <GiHamburgerMenu className={`${isMenuOpen && 'hidden'}`} />}
